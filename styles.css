@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --fontF: "Space Mono", monospace;
+    --StrongCyan: hsl(172, 67%, 45%);
+    --darkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(189, 41%, 97%);
+    --sizeInputs: 20px;
+    --fontWeights: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontF);
+}
+
+.content__label__and__messageError{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .messageError{
+        display: none;
+        font-size: 12px;
+        color: tomato;
+        font-weight: var(--fontWeights);
+    }
+}
+
+.errorBorder{
+    border: 2px solid tomato !important;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightGrayishCyan);
+
+    .title{
+        color: var(--darkGrayishCyan);
+        font-size: var(--sizeInputs);
+        letter-spacing: 8px;
+        margin-bottom: 3rem;
+    }
+
+    .content__all{
+        background-color: var(--veryLightGrayishCyan);
+        padding: 2rem;
+        border-radius: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .content__selectedTypePrice{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+            label{
+                font-size: 12px;
+                letter-spacing: .5px;
+                color: var(--darkGrayishCyan);
+                font-weight: 505;
+            }
+            .contentLabelInput{
+                width: 100%;
+
+                .contentInputPrice{
+                    position: relative;
+                    width: 100%;
+                    margin-top: 8px;
+                    .stylesForInputsMain{
+                        text-align: right;
+                        padding: .8rem;
+                        width: 100%;
+                        height: 40px;
+                        border: 2px solid transparent;
+                        outline: none;
+                        background-color: hsla(190, 24%, 65%, 0.14);
+                        border-radius: 7px;
+                        color: var(--darkGrayishCyan);
+                        font-weight: var(--fontWeights);
+                        font-size: var(--sizeInputs);
+                        cursor: pointer;
+                        transition: .2s ease;
+
+                        &::placeholder{
+                            color: var(--grayishCyan);
+                            font-weight: var(--fontWeights);
+                            font-size: var(--sizeInputs);
+                        }
+
+                        &:hover{border: 2px solid var(--StrongCyan);}
+                    }
+
+                    .iconsInputsMain{
+                        position: absolute;
+                        top: 50%;
+                        left: .8rem;
+                        transform: translateY(-50%);
+                        color: var(--grayishCyan);
+                    }
+                }
+            }
+
+            .SelecTypePorcent{
+                width: 100%;
+
+                .content__InputSelectPorcent{
+                    margin-top: 8px;
+                    display: grid;
+                    grid-template-areas: "Select5 Select10 Select15"
+                                         "Select25 Select50 custom";
+                    gap: 1rem;
+
+                    .contentTip{
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--darkCyan);
+                        border-radius: 7px;
+                        z-index: 1;
+
+                        &:hover{background-color: var(--StrongCyan);}
+                        
+
+                        .porcentLabel{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: var(--sizeInputs);
+                            color: white;
+
+                        }
+                    }
+
+                    input[type="radio"]{
+                        width: 100px;
+                        background-color: var(--darkCyan);
+                        color: white;
+                        font-weight: var(--fontWeights);
+                        outline: none;
+                        border: 2px solid transparent;
+                        height: 40px;
+                        cursor: pointer;
+                        font-size: var(--sizeInputs);
+                        border-radius: 4px;
+                        transition: .2s ease;
+                        appearance: none;
+
+                    }
+
+                    .custom{
+                        width: 100px;
+                        text-align: center;
+                        background-color: hsla(190, 24%, 65%, 0.14);
+                        border: 2px solid transparent;
+                        outline: none;
+                        color: var(--darkGrayishCyan);
+                        border-radius: 4px;
+                        font-size: var(--sizeInputs);
+                        cursor: pointer;
+                        transition: .2s ease;
+                        
+                        &::placeholder{
+                            font-size: var(--sizeInputs);
+                            color: var(--darkGrayishCyan);
+                            font-weight: var(--fontWeights);
+                        }
+                        &:hover{border: 2px solid var(--StrongCyan);}
+                    }
+
+                    .porcent5{grid-area: Select5;}
+                    .Select10{grid-area: Select10;}
+                    .Select15{grid-area: Select15;}
+                    .Select25{grid-area: Select25;}
+                    .Select50{grid-area: Select50;}
+                    .custom{grid-area: custom;}
+                    
+                }
+            }
+        }
+
+        .contentResulForm{
+            width: 370px;
+            background-color: var(--darkCyan);
+            padding: 2rem;
+            border-radius: 18px;
+
+            .ResultBox{
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                margin-bottom: 6rem;
+
+                .content__tipAmount{
+                    color: white;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .tipAmount{
+                        font-size: 13px;
+                        font-weight: var(--fontWeights);
+                        letter-spacing: .2px;
+
+                        .person{
+                            color: var(--grayishCyan);
+                            font-size: 10px;
+                            letter-spacing: .2px;
+                        }
+                    }
+
+                    .resultAmount{
+                        font-size: 2.5rem;
+                        color: var(--StrongCyan);
+                        font-weight: var(--fontWeights);
+                    }
+                }
+            }
+
+            input[type="submit"]{
+                width: 100%;
+                height: 40px;
+                border-radius: 4px;
+                outline: none;
+                border: none;
+                background-color: hsla(172, 67%, 45%, 0.189);
+                text-transform: uppercase;
+                font-weight: var(--fontWeights);
+                color: var(--darkCyan);
+                letter-spacing: 1px;
+                font-size: var(--sizeInputs);
+                cursor: pointer;
+                transition: .3s ease;
+
+                &:hover{background-color: var(--StrongCyan);}
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    body{
+        height: 100%;
+
+
+        .content__all{
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            border-radius: 18px 18px 0 0;
+
+            .content__selectedTypePrice{
+                width: 100%;
+
+
+                input[type="radio"]{
+                    width: 100%;
+                }
+
+
+                .SelecTypePorcent{
+                    .content__InputSelectPorcent{
+                        grid-template-areas: "Select5 Select10 "
+                                             "Select15 Select25"
+                                             "Select50 custom";
+
+
+
+                        .custom{
+                            border: 2px solid red;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

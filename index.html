@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <h1 class="title">SPLI<br>TTER</h1>
+  <main class="content__all">
+    <form class="content__selectedTypePrice">
+      <section class="contentLabelInput">
+        <label class="Bill">Bill</label>
+        <div class="contentInputPrice">
+          <input type="text" placeholder="0" class="stylesForInputsMain onlyNumber" id="bill" maxlength="20">
+          <i class='bx bx-dollar iconsInputsMain'></i>
+        </div>
+      </section>
+
+      <section class="SelecTypePorcent">
+        <label class="porcent">Select Tip %</label>
+
+        <section class="content__InputSelectPorcent">
+          <div class="contentTip">
+            <input type="radio" value="5" class="porcent5 stylesForSelectedPorcent">
+            <label class="porcentLabel">5%</label>
+          </div>
+
+          <div class="contentTip">
+            <input type="radio" value="10" class="porcent10 stylesForSelectedPorcent">
+            <label class="porcentLabel">10%</label>
+          </div>
+
+          <div class="contentTip">
+            <input type="radio" value="15" class="porcent15 stylesForSelectedPorcent">
+            <label class="porcentLabel">15%</label>
+          </div>
+
+          <div class="contentTip">
+            <input type="radio" value="25" class="porcent25 stylesForSelectedPorcent">
+            <label class="porcentLabel">25%</label>
+          </div>
+
+          <div class="contentTip">
+            <input type="radio" value="50" class="porcent50 stylesForSelectedPorcent">
+            <label class="porcentLabel">50%</label>
+          </div>
+          <input type="text" placeholder="Custom" class="custom onlyNumber" maxlength="3">
+        </section>
+      </section>
+
+      <section class="contentLabelInput">
+        <div class="content__label__and__messageError">
+          <label class="Bill">Number of People</label>
+          <span class="messageError">Can't be zero</span>
+        </div>
+        <div class="contentInputPrice">
+          <input type="text" placeholder="0" class="stylesForInputsMain onlyNumber" maxlength="20" id="numberPeople">
+          <i class='bx bxs-user iconsInputsMain'></i>
+        </div>
+      </section>
+    </form>
+
+    <article class="contentResulForm">
+      <section class="ResultBox">
+        <div class="content__tipAmount">
+          <span class="tipAmount">Tip Amount <br><span class="person">/ person</span></span>
+          <span class="resultAmount">$<span class="valueAmount">0.00</span></span>
+        </div>
+
+        <div class="content__tipAmount">
+          <span class="tipAmount">Total <br><span class="person">/ person</span></span>
+          <span class="resultAmount">$<span class="valueTotal">0.00</span></span>
+        </div>
+      </section>
+      <input type="submit" value="Reset" class="reset">
+    </article>
+  </main>
+</body>
+</html>
